@@ -2,15 +2,15 @@ import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Posts from "./components/Posts";
+import Myposts from "./components/Myposts";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <div className="container">
-        <h1 className="text-center mt-5">Hello, Bootstrap!</h1>
-        <button className="btn btn-primary">Click Me</button>
-        <Posts></Posts>
+        <Myposts />
+        {/* <Posts></Posts> */}
       </div>
     </div>
   );
