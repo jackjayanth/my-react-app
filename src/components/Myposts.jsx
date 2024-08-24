@@ -36,16 +36,17 @@ function Myposts() {
     <>
       <div>
         {data.map((i, index) => (
-          <>
-            <div
-              key={index}
-              style={{ border: "1px solid black", padding: "1%" }}
-            >
-              <h4>{i.title}</h4>
-              <p>{i.body}</p>
-            </div>
-            <br />
-          </>
+          <div
+            key={index}
+            style={{
+              border: "1px solid black",
+              padding: "1%",
+              marginBottom: "1%",
+            }}
+          >
+            <h4>{i.title}</h4>
+            <p>{i.body}</p>
+          </div>
         ))}
       </div>
     </>
