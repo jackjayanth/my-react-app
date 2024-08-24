@@ -34,7 +34,6 @@ function Myposts() {
   }, []);
   return (
     <>
-      <h1>jay</h1>
       <div>
         {data.map((i, index) => (
           <>
