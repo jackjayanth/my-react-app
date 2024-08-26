@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-
+import GetData from "./GetData";
+import DeleteButton from "./DeleteButton";
 function Myposts() {
   const dataPile = [
     {
@@ -32,8 +33,22 @@ function Myposts() {
   useEffect(() => {
     setData(dataPile);
   }, []);
+  function handleSubmit(d) {
+    setData([...data, d]);
+    console.log(data);
+  }
+  function deltelHandler(id) {
+    let itemToBeDeleted = data.find((i) => i.id === id);
+    // console.log(itemToBeDeleted);
+    let newArray = data.filter((i) => {
+      return i.id !== id;
+    });
+    console.log(newArray);
+    setData(newArray);
+  }
   return (
     <>
+      <GetData data={dataPile} onSubmit={(d) => handleSubmit(d)} />
       <div>
         {data.map((i, index) => (
           <div
@@ -44,8 +59,15 @@ function Myposts() {
               marginBottom: "1%",
             }}
           >
+            <h1>{i.id}</h1>
             <h4>{i.title}</h4>
             <p>{i.body}</p>
+
+            <DeleteButton
+              buttonName={"delete"}
+              id={i.id}
+              sendingId={(id) => deltelHandler(id)}
+            />
           </div>
         ))}
       </div>
