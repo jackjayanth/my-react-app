@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function GetData({ onSubmit, data }) {
+function GetData({ onSubmit, dataLength }) {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
 
@@ -8,7 +8,7 @@ function GetData({ onSubmit, data }) {
     e.preventDefault();
     const dataToSend = {
       userId: 1,
-      id: data.length + 1,
+      id: dataLength + 1,
       title: title,
       body: body,
     };

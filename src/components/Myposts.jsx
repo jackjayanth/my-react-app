@@ -30,6 +30,7 @@ function Myposts() {
     },
   ];
   const [data, setData] = useState([dataPile]);
+  let dataLength = data.length;
   useEffect(() => {
     setData(dataPile);
   }, []);
@@ -48,13 +49,13 @@ function Myposts() {
   }
   return (
     <>
-      <GetData data={dataPile} onSubmit={(d) => handleSubmit(d)} />
+      <GetData dataLength={dataLength} onSubmit={(d) => handleSubmit(d)} />
       <div>
         {data.map((i, index) => (
           <div
             key={index}
             style={{
-              border: "1px solid black",
+              border: "1px solid white",
               padding: "1%",
               marginBottom: "1%",
             }}
